@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Potion Cosmetics</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Anuphan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Sparkles Background Decor -->
+    <div class="sparkles-bg"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="brand-logo" onclick="navigateTo('home')">
+                <span class="emoji">🌸</span>
+                <span class="brand-name">Love Potion</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active" data-tab="home" onclick="navigateTo('home')">
+                    <i class="fa-solid fa-house"></i> หน้าแรก
+                </a>
+                <a href="#products" class="nav-link" data-tab="products" onclick="navigateTo('products')">
+                    <i class="fa-solid fa-bag-shopping"></i> สินค้า
+                </a>
+                <a href="#promotions" class="nav-link" data-tab="promotions" onclick="navigateTo('promotions')">
+                    <i class="fa-solid fa-gift"></i> โปรโมชัน
+                </a>
+                <a href="#track" class="nav-link" data-tab="track" onclick="navigateTo('track')">
+                    <i class="fa-solid fa-truck-fast"></i> ติดตามสินค้า
+                </a>
+                <a href="#profile" class="nav-link" data-tab="profile" onclick="navigateTo('profile')">
+                    <i class="fa-solid fa-user"></i> โปรไฟล์
+                </a>
+            </nav>
+
+            <!-- Cart Trigger Icon -->
+            <div class="header-actions">
+                <a href="#cart" class="cart-trigger-btn" onclick="navigateTo('cart')" aria-label="View Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-badge-count">3</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main App Container -->
+    <main class="app-container">
+        
+        <!-- PAGE 1: HOME -->
+        <section id="home" class="page-section active">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <div class="hero-image-wrapper">
+                    <img src="images/hero.png" alt="Love Potion Hero Display" class="hero-img">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <span class="hero-tag">Special Promotion</span>
+                    <h1>Love Potion Cosmetics</h1>
+                    <p class="hero-promo-text">✨ โปรโมชันพิเศษ ลดสูงสุด <span class="highlight">50%</span></p>
+                    <button class="btn btn-primary btn-glow" onclick="navigateTo('products')">
+                        ช้อปเลย <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Velvet Kiss Collection Section -->
+            <div class="home-section-container">
+                <div class="section-header text-center">
+                    <span class="subtitle">New Collection</span>
+                    <h2>💄 ลิปสติกคอลเลกชันใหม่</h2>
+                    <p>สัมผัสความเนียนนุ่มดุจกำมะหยี่ โดดเด่นสะกดทุกสายตา</p>
+                </div>
+
+                <div class="velvet-collection-showcase">
+                    <div class="showcase-img-card">
+                        <img src="images/velvet_kiss.png" alt="Velvet Kiss Collection" id="velvet-main-img">
+                        <div class="swatch-color-glow" id="swatch-glow-effect"></div>
+                    </div>
+                    <div class="showcase-details">
+                        <div class="product-badge">NEW ARRIVAL</div>
+                        <h3 id="velvet-title">Velvet Kiss Lipstick</h3>
+                        <p class="product-shade-code" id="velvet-code">Shade: #01 Rose Pink</p>
+                        <p class="product-description" id="velvet-desc">ลิปสติกเนื้อกำมะหยี่สีชมพูกุหลาบหวานละมุน พิกเมนต์แน่น สัมผัสบางเบาสบายปาก ให้ริมฝีปากดูอวบอิ่มอย่างเป็นธรรมชาติ</p>
+                        
+                        <div class="shade-selector-container">
+                            <span class="label">เลือกเฉดสี:</span>
+                            <div class="shade-swatches">
+                                <button class="swatch-btn active" data-shade="01" data-color="#e07a5f" title="Rose Pink" style="background-color: #e07a5f;"></button>
+                                <button class="swatch-btn" data-shade="02" data-color="#c9184a" title="Cherry Red" style="background-color: #c9184a;"></button>
+                                <button class="swatch-btn" data-shade="03" data-color="#d4a373" title="Nude Brown" style="background-color: #d4a373;"></button>
+                            </div>
+                        </div>
+
+                        <div class="price-action-row">
+                            <div class="price-container">
+                                <span class="old-price">590 บาท</span>
+                                <span class="current-price" id="velvet-price">295 บาท</span>
+                                <span class="discount-pill">ลด 50%</span>
+                            </div>
+                            <button class="btn btn-primary" id="add-velvet-btn">
+                                <i class="fa-solid fa-cart-plus"></i> ใส่ตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Sellers Section -->
+            <div class="home-section-container">
+                <div class="section-header flex-header">
+                    <div>
+                        <span class="subtitle">Trending Products</span>
+                        <h2>🔥 สินค้าขายดี</h2>
+                    </div>
+                    <button class="btn btn-outline btn-sm" onclick="navigateTo('products')">ดูทั้งหมด</button>
+                </div>
+
+                <div class="products-grid" id="bestsellers-grid">
+                    <!-- Dynamic Best Sellers -->
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="home-section-container reviews-section-bg">
+                <div class="section-header text-center">
+                    <span class="subtitle">Testimonials</span>
+                    <h2>⭐ รีวิวล่าสุดจากลูกค้า</h2>
+                    <p>เสียงตอบรับจากผู้ใช้จริงที่หลงรัก Love Potion Cosmetics</p>
+                </div>
+
+                <div class="reviews-grid" id="reviews-container">
+                    <!-- Dynamic Reviews -->
+                </div>
+
+                <!-- Add Review Form -->
+                <div class="write-review-card glass-panel">
+                    <h3>แบ่งปันความรู้สึกของคุณ</h3>
+                    <form id="add-review-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="review-name">ชื่อของคุณ</label>
+                                <input type="text" id="review-name" required placeholder="เช่น NongGoyu">
+                            </div>
+                            <div class="form-group">
+                                <label>คะแนนรีวิว</label>
+                                <div class="rating-input-stars">
+                                    <input type="radio" id="star5" name="rating" value="5" checked><label for="star5" title="5 stars"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star"><i class="fa-solid fa-star"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-text">ความคิดเห็น</label>
+                            <textarea id="review-text" rows="3" required placeholder="สีสวยมาก ติดทนตลอดวัน ไม่ตกร่องเลยค่ะ..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">ส่งรีวิว</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: PRODUCTS -->
+        <section id="products" class="page-section">
+            <div class="products-header">
+                <div>
+                    <span class="subtitle">Shop All</span>
+                    <h2>🛍️ หน้าสินค้า (Products)</h2>
+                </div>
+                <div class="search-filter-bar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="product-search-input" placeholder="ค้นหาสินค้า...">
+                    </div>
+                    <div class="sort-box">
+                        <select id="product-sort-select">
+                            <option value="default">จัดเรียง: แนะนำ</option>
+                            <option value="price-low">ราคา: ต่ำ - สูง</option>
+                            <option value="price-high">ราคา: สูง - ต่ำ</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Tabs -->
+            <div class="categories-filter-bar">
+                <button class="category-btn active" data-category="all">ทั้งหมด</button>
+                <button class="category-btn" data-category="matte"><span class="emoji">💄</span> ลิปสติกเนื้อแมตต์</button>
+                <button class="category-btn" data-category="tint"><span class="emoji">💋</span> ลิปทินต์</button>
+                <button class="category-btn" data-category="gloss"><span class="emoji">✨</span> ลิปกลอส</button>
+                <button class="category-btn" data-category="set"><span class="emoji">🎁</span> เซ็ตของขวัญ</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="all-products-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- PAGE 3: CART -->
+        <section id="cart" class="page-section">
+            <div class="cart-header">
+                <h2>🛒 ตะกร้าสินค้าของคุณ</h2>
+                <button class="clear-cart-btn" onclick="clearCart()"><i class="fa-solid fa-trash-can"></i> ล้างตะกร้า</button>
+            </div>
+
+            <div class="cart-layout">
+                <!-- Cart Items Column -->
+                <div class="cart-items-column" id="cart-items-container">
+                    <!-- Dynamic Cart Items -->
+                </div>
+
+                <!-- Checkout Summary Column -->
+                <div class="cart-summary-column">
+                    <div class="summary-card glass-panel">
+                        <h3>สรุปคำสั่งซื้อ</h3>
+                        
+                        <div class="summary-row">
+                            <span>ราคารวมสินค้า</span>
+                            <span id="summary-subtotal">0 บาท</span>
+                        </div>
+                        
+                        <!-- Applied Discounts Area -->
+                        <div class="discounts-applied-list" id="applied-discounts-container">
+                            <!-- e.g. Coupon discounts, points discount -->
+                        </div>
+
+                        <div class="summary-row">
+                            <span>ค่าจัดส่ง</span>
+                            <span id="summary-shipping">50 บาท</span>
+                        </div>
+
+                        <hr class="summary-divider">
+
+                        <div class="summary-row total-row">
+                            <span>ยอดชำระสุทธิ</span>
+                            <span id="summary-total">0 บาท</span>
+                        </div>
+
+                        <!-- Promotion Code Input -->
+                        <div class="promo-input-box">
+                            <input type="text" id="promo-code-input" placeholder="ใส่รหัสคูปอง (เช่น LOVE10)">
+                            <button class="btn btn-outline btn-sm" onclick="applyPromoCode()">ใช้</button>
+                        </div>
+                        <p class="promo-feedback-msg" id="promo-feedback"></p>
+
+                        <!-- Points Claim Block -->
+                        <div class="points-redemption-card">
+                            <div class="points-header">
+                                <i class="fa-solid fa-coins"></i>
+                                <span>แต้มสะสม: <strong id="summary-user-points">1,200</strong> คะแนน</span>
+                            </div>
+                            <p class="points-sub">ใช้ 1,000 คะแนนเพื่อแลกส่วนลด 100 บาท</p>
+                            <button class="btn btn-secondary btn-xs w-100" id="redeem-points-btn" onclick="togglePointsRedemption()">
+                                แลกส่วนลด 100 บาท
+                            </button>
+                        </div>
+
+                        <!-- Checkout Button -->
+                        <button class="btn btn-primary w-100 btn-glow" id="checkout-action-btn" onclick="processCheckout()">
+                            ดำเนินการชำระเงิน <i class="fa-solid fa-credit-card"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: TRACK ORDER -->
+        <section id="track" class="page-section">
+            <div class="track-header text-center">
+                <h2>🚚 ติดตามสถานะสินค้า</h2>
+                <p>ตรวจสอบสถานะและตำแหน่งพัสดุของคุณแบบเรียลไทม์</p>
+            </div>
+
+            <!-- Order Selector (for high fidelity simulation) -->
+            <div class="order-picker-container glass-panel">
+                <div class="flex-row justify-between align-center">
+                    <div>
+                        <span class="label">คำสั่งซื้อที่เลือก:</span>
+                        <select id="tracking-order-select" onchange="loadOrderTracking(this.value)">
+                            <!-- Dynamic list of orders -->
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="advanceOrderStatusSim()">
+                        <i class="fa-solid fa-forward-step"></i> เร่งสถานะ (จำลอง)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Order Status Dashboard -->
+            <div class="tracking-dashboard" id="tracking-dashboard-content">
+                <!-- Loaded Dynamically -->
+            </div>
+        </section>
+
+        <!-- PAGE 5: PROMOTIONS -->
+        <section id="promotions" class="page-section">
+            <div class="promo-header text-center">
+                <span class="subtitle">Exclusive Deals</span>
+                <h2>🎁 สิทธิพิเศษและคูปองส่วนลด</h2>
+                <p>แจกความคุ้มค่าทุกการช้อป สะสมคะแนนแลกส่วนลดพิเศษ</p>
+            </div>
+
+            <!-- Promo Codes Grid -->
+            <div class="promo-coupons-grid">
+                <!-- Coupon 1 -->
+                <div class="coupon-card glass-panel pink-theme">
+                    <div class="coupon-decor"></div>
+                    <div class="coupon-body">
+                        <div class="discount-value">10% OFF</div>
+                        <p class="coupon-title">ส่วนลด 10% สำหรับทุกรายการ</p>
+                        <p class="coupon-desc">ไม่มีขั้นต่ำในการสั่งซื้อ</p>
+                        <div class="coupon-code-box">
+                            <span class="code">LOVE10</span>
+                            <button class="btn btn-primary btn-xs" onclick="copyCouponCode('LOVE10', this)">คัดลอก</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coupon 2 -->
+                <div class="coupon-card glass-panel gold-theme">
+                    <div class="coupon-decor"></div>
+                    <div class="coupon-body">
+                        <div class="discount-value">FREE SHIP</div>
+                        <p class="coupon-title">คูปองส่งฟรี ไม่มีขั้นต่ำ</p>
+                        <p class="coupon-desc">ประหยัดค่าจัดส่ง 50 บาททันที</p>
+                        <div class="coupon-code-box">
+                            <span class="code">FREESHIP</span>
+                            <button class="btn btn-primary btn-xs" onclick="copyCouponCode('FREESHIP', this)">คัดลอก</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Points Rewards Program Panel -->
+            <div class="points-reward-program glass-panel">
+                <div class="reward-flex">
+                    <div class="reward-info">
+                        <h3><i class="fa-solid fa-star-half-stroke"></i> ระบบสมาชิกและคะแนนสะสม</h3>
+                        <p>ช้อปทุก 1 บาท = รับ 1 คะแนนสะสม สะสมครบนำไปแลกของรางวัลหรือส่วนลดสุดคุ้ม!</p>
+                        
+                        <div class="reward-progress-wrapper">
+                            <div class="reward-progress-labels">
+                                <span>ระดับปัจจุบัน: <strong>NongGoyu</strong></span>
+                                <span><strong id="reward-current-points">1,200</strong> / 2,000 คะแนน</span>
+                            </div>
+                            <div class="progress-bar-outer">
+                                <div class="progress-bar-inner" id="points-progress-bar" style="width: 60%;"></div>
+                            </div>
+                            <p class="reward-hint">สะสมอีก 800 คะแนน เพื่ออัปเกรดเป็นระดับ VIP Rose Gold 🌹</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reward-redeem-card">
+                        <div class="gift-icon-glow">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <h4>สะสมครบ 1,000 คะแนน</h4>
+                        <p>แลกรับส่วนลดเงินสดมูลค่า 100 บาท</p>
+                        <button class="btn btn-primary btn-sm btn-glow w-100" onclick="redeemPointsForCoupon()">
+                            แลกคะแนนสะสม
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 6: PROFILE -->
+        <section id="profile" class="page-section">
+            <div class="profile-layout">
+                <!-- User Summary Card -->
+                <div class="profile-sidebar-column">
+                    <div class="profile-card-glass glass-panel text-center">
+                        <div class="avatar-wrapper">
+                            <div class="avatar-placeholder">NG</div>
+                            <button class="edit-avatar-btn" aria-label="Change Avatar"><i class="fa-solid fa-camera"></i></button>
+                        </div>
+                        <h2 class="profile-username" id="profile-display-name">NongGoyu</h2>
+                        <span class="user-tier-badge"><i class="fa-solid fa-gem"></i> Member</span>
+                        
+                        <div class="profile-stats-grid">
+                            <div class="stat-box">
+                                <strong id="profile-stat-points">1,200</strong>
+                                <span>คะแนนสะสม</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong id="profile-stat-orders">1</strong>
+                                <span>คำสั่งซื้อ</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong id="profile-stat-wishlist">0</strong>
+                                <span>สินค้าที่ชื่นชอบ</span>
+                            </div>
+                        </div>
+
+                        <hr class="profile-divider">
+
+                        <div class="profile-quick-nav">
+                            <button class="quick-nav-btn active" data-subtab="address" onclick="switchProfileTab('address', this)">
+                                <i class="fa-solid fa-location-dot"></i> ที่อยู่จัดส่ง
+                            </button>
+                            <button class="quick-nav-btn" data-subtab="history" onclick="switchProfileTab('history', this)">
+                                <i class="fa-solid fa-clock-rotate-left"></i> ประวัติการสั่งซื้อ
+                            </button>
+                            <button class="quick-nav-btn" data-subtab="favorites" onclick="switchProfileTab('favorites', this)">
+                                <i class="fa-solid fa-heart"></i> สินค้าที่ชื่นชอบ
+                            </button>
+                            <button class="quick-nav-btn" data-subtab="settings" onclick="switchProfileTab('settings', this)">
+                                <i class="fa-solid fa-gear"></i> ตั้งค่าบัญชี
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Details Column -->
+                <div class="profile-details-column">
+                    
+                    <!-- Sub-tab 1: Shipping Address -->
+                    <div id="profile-sub-address" class="profile-sub-tab active glass-panel">
+                        <div class="panel-header">
+                            <h3>📍 ที่อยู่จัดส่ง</h3>
+                            <button class="btn btn-outline btn-xs" id="edit-address-btn" onclick="toggleAddressEdit()">แก้ไขที่อยู่</button>
+                        </div>
+                        
+                        <div id="address-display-view">
+                            <p class="address-text" id="address-summary">
+                                <strong>คุณ ณิชนันทน์ (NongGoyu)</strong><br>
+                                99/9 หมู่ 5 ถนนงามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900<br>
+                                เบอร์โทร: 089-123-4567
+                            </p>
+                        </div>
+
+                        <div id="address-edit-view" class="hidden">
+                            <form id="edit-address-form" onsubmit="saveAddress(event)">
+                                <div class="form-group">
+                                    <label for="addr-name">ชื่อผู้รับ</label>
+                                    <input type="text" id="addr-name" required value="คุณ ณิชนันทน์ (NongGoyu)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="addr-detail">ที่อยู่ (บ้านเลขที่, ถนน, ซอย)</label>
+                                    <input type="text" id="addr-detail" required value="99/9 หมู่ 5 ถนนงามวงศ์วาน แขวงลาดยาว เขตจตุจักร">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="addr-province">จังหวัด</label>
+                                        <input type="text" id="addr-province" required value="กรุงเทพมหานคร">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addr-zip">รหัสไปรษณีย์</label>
+                                        <input type="text" id="addr-zip" required value="10900">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="addr-phone">เบอร์โทรศัพท์</label>
+                                    <input type="tel" id="addr-phone" required value="089-123-4567">
+                                </div>
+                                <div class="flex-row gap-2 mt-3">
+                                    <button type="submit" class="btn btn-primary btn-sm">บันทึก</button>
+                                    <button type="button" class="btn btn-outline btn-sm" onclick="toggleAddressEdit()">ยกเลิก</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Sub-tab 2: Order History -->
+                    <div id="profile-sub-history" class="profile-sub-tab glass-panel">
+                        <h3>📦 ประวัติการสั่งซื้อ</h3>
+                        <div class="order-history-list" id="order-history-list">
+                            <!-- Dynamic Order History Cards -->
+                        </div>
+                    </div>
+
+                    <!-- Sub-tab 3: Favorites (Wishlist) -->
+                    <div id="profile-sub-favorites" class="profile-sub-tab glass-panel">
+                        <h3>❤️ สินค้าที่ชื่นชอบ</h3>
+                        <div class="favorites-grid" id="favorites-grid-container">
+                            <!-- Dynamic Wishlist Cards -->
+                            <p class="empty-state-text" id="wishlist-empty-msg">ยังไม่มีสินค้าที่คุณถูกใจ กดหัวใจที่หน้ารายการสินค้าได้เลย!</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-tab 4: Settings -->
+                    <div id="profile-sub-settings" class="profile-sub-tab glass-panel">
+                        <h3>⚙️ ตั้งค่าบัญชี</h3>
+                        <form id="settings-form" onsubmit="saveSettings(event)">
+                            <div class="form-group">
+                                <label for="settings-username">ชื่อผู้ใช้ (Username)</label>
+                                <input type="text" id="settings-username" required value="NongGoyu">
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-email">อีเมล</label>
+                                <input type="email" id="settings-email" required value="nonggoyu@lovepotion.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-phone">เบอร์ติดต่อหลัก</label>
+                                    <input type="tel" id="settings-phone" required value="089-123-4567">
+                            </div>
+                            
+                            <hr class="profile-divider">
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="set-newsletter" checked>
+                                <label for="set-newsletter">รับข้อมูลข่าวสาร โปรโมชันพิเศษทางอีเมล</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="set-sms" checked>
+                                <label for="set-sms">รับการแจ้งเตือนสถานะจัดส่งทาง SMS</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-sm mt-3">บันทึกการตั้งค่า</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Love Potion Cosmetics. All Rights Reserved.</p>
+            <p>Made with 💖 for NongGoyu</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Banner -->
+    <div id="toast-notification" class="toast-notification hidden">
+        <span id="toast-message">สินค้าถูกเพิ่มลงในตะกร้าแล้ว!</span>
+    </div>
+
+    <!-- Application Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
